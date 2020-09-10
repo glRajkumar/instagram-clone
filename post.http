@@ -1,0 +1,64 @@
+@host = http://localhost:5000
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjU0Yjg5ZTFkODBkMTA1ZjQ3ZDkyZDQiLCJpYXQiOjE1OTkzODc4MTEsImV4cCI6MTU5OTQ1MjYxMX0.aqdvjkDIYzdqKR8igD2l50-ldtDHhopaVO52FRDKzyI
+
+### 1 5f54bf12e34b261748041166
+### 2 5f54bf21e34b261748041167
+### 3 5f54bf36e34b261748041168
+### 4 5f54bf40e34b261748041169
+
+
+### get my post 
+GET {{host}}/post/mypost
+Authorization: {{token}}
+
+### get all post 
+GET {{host}}/post/allpost
+Authorization: {{token}}
+
+### get sub post 
+GET {{host}}/post/getsubpost
+Authorization: {{token}}
+
+### create post
+POST {{host}}/post/createpost
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "title": "title3",
+    "body" : "body3",
+    "picUrl" : "pic3"
+}
+
+### like post
+PUT {{host}}/post/like
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "postId": "5f54bf40e34b261748041169"
+}
+
+### unlike post
+PUT {{host}}/post/unlike
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "postId": "5f54bf40e34b261748041169"
+}
+
+### comment post
+PUT {{host}}/post/comment
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "text": "super",
+    "postId" : "5f54bf40e34b261748041169"
+}
+
+### delete
+DELETE  {{host}}/post/5f536ef062f6c022b0322c46
+Content-Type: application/json
+Authorization: {{token}}

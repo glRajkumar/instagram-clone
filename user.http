@@ -1,0 +1,86 @@
+@host = http://localhost:5000
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjU0Yjg5ZTFkODBkMTA1ZjQ3ZDkyZDQiLCJpYXQiOjE1OTkzODc4MTEsImV4cCI6MTU5OTQ1MjYxMX0.aqdvjkDIYzdqKR8igD2l50-ldtDHhopaVO52FRDKzyI
+
+### 1 5f53625b5f7e9c0904c003c4
+### eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjUzNjI1YjVmN2U5YzA5MDRjMDAzYzQiLCJpYXQiOjE1OTkzNjg1ODcsImV4cCI6MTU5OTQzMzM4N30.i373LdUiiKhTFf5r1ABxSwU8W_BkWVkDxcQcPSkn9Sw
+### 2 5f54b8421d80d105f47d92d3
+### eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjU0Yjg0MjFkODBkMTA1ZjQ3ZDkyZDMiLCJpYXQiOjE1OTkzODc3MzQsImV4cCI6MTU5OTQ1MjUzNH0.hNuJoVxpWDGtugn3MeaykgzMFJmcNbqte7l0RUgX3tM
+### 3 5f54b89e1d80d105f47d92d4
+### eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjU0Yjg5ZTFkODBkMTA1ZjQ3ZDkyZDQiLCJpYXQiOjE1OTkzODc4MTEsImV4cCI6MTU5OTQ1MjYxMX0.aqdvjkDIYzdqKR8igD2l50-ldtDHhopaVO52FRDKzyI
+
+### get
+GET {{host}}
+
+### get me 
+GET {{host}}/user/me
+Authorization: {{token}}
+
+### get user by id
+GET {{host}}/user/
+Authorization: {{token}}
+
+### register
+POST {{host}}/user/register
+Content-Type: application/json
+
+{
+    "name": "kiuj",
+    "email" : "aa2@aa.bb",
+    "password" : "aA1!aaaa"
+}
+
+### login
+POST {{host}}/user/login
+Content-Type: application/json
+
+{
+    "email" : "aa2@aa.bb",
+    "password" : "aA1!aaaa"
+}
+
+### updatePass
+PUT {{host}}/user
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "email" : "kk@bb.bb",
+    "oldPass" : "aA1!aaaa",
+    "newPass" : "Aa1!abba"
+}
+
+### follow
+PUT {{host}}/user/follow
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "followId" : "5f53625b5f7e9c0904c003c4"
+}
+
+### unfollow
+PUT {{host}}/user/unfollow
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "unfollowId" : "5f54b89e1d80d105f47d92d4"
+}
+
+###search users
+POST {{host}}/user/search-user
+Authorization: {{token}}
+
+{
+    "query" : "kk@bb.bb"
+}
+
+### logout
+POST {{host}}/user/logout
+Content-Type: application/json
+Authorization: {{token}}
+
+### delete
+DELETE  {{host}}/user
+Content-Type: application/json
+Authorization: {{token}}
